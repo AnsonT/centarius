@@ -221,9 +221,8 @@ const routes = [
   },
   {
     path: '/user/:username',
-    routeComponent: ProtectedRoute,
-    component: User,
-    ...rest
+    routerComponent: ProtectedRoute,
+    component: User
 
     // Internally these will become:
     // <ProtectedRoute path={path} exact={exact} render={props => <component {...props} data={data} />} {...rest } />
@@ -255,7 +254,7 @@ __TL;DR : path will be concatted recursively from parent routes__
 {
   path: '/user',
   exact: true,
-  routeComponent: ProtectedRoute,
+  routerComponent: ProtectedRoute,
   component: User,
   routes: [
     {
@@ -299,7 +298,7 @@ const routes = [
   {
     path: '/user',
     exact: true,
-    routeComponent: ProtectedRoute,
+    routerComponent: ProtectedRoute,
     component: User,
     routes: [
       {
